@@ -1,0 +1,181 @@
+/* Custom animations and additional styles */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes runningText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.service-card {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.service-card.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    background-color: #3B82F6;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+/* Running Text Effect */
+.running-text-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.animated-text {
+    display: inline-block;
+    animation: runningText 30s linear infinite;
+    will-change: transform;
+}
+
+/* Slider Transitions */
+#portfolioSlider {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Modal Animations */
+#projectModal {
+    animation: fadeIn 0.3s ease-out;
+}
+
+#projectModal > div {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3B82F6;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2563EB;
+}
+
+/* Image Hover Effect */
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Button Hover Effects */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* Filter Button Active State */
+.filter-btn.active {
+    transform: scale(1.05);
+}
+
+/* Card Hover Shadow */
+.shadow-lg:hover {
+    box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.3), 0 10px 10px -5px rgba(59, 130, 246, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .service-card {
+        margin-bottom: 1rem;
+    }
+    
+    #portfolioSlider {
+        padding: 0 1rem;
+    }
+}
+
+/* Glow Effect for Cards */
+.service-card:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Logo Animation */
+.logo-container {
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+    transform: rotate(360deg);
+}
+
+/* Gradient Text Effect */
+.gradient-text {
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
