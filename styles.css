@@ -1,0 +1,311 @@
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+}
+
+/* Running Text Animation */
+.running-text-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.animated-text {
+    display: inline-block;
+    animation: scroll-text 30s linear infinite;
+    white-space: nowrap;
+}
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Section Animation - Initial State */
+.section-animate {
+    opacity: 0;
+}
+
+.section-animate .animate-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Staggered Animation Delay */
+.section-animate .animate-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.section-animate .animate-item:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.section-animate .animate-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.section-animate .animate-item:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.section-animate .animate-item:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.section-animate .animate-item:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+.section-animate .animate-item:nth-child(7) {
+    transition-delay: 0.7s;
+}
+
+.section-animate .animate-item:nth-child(8) {
+    transition-delay: 0.8s;
+}
+
+/* Section Visible State */
+.section-animate.section-visible {
+    opacity: 1;
+}
+
+.section-animate.section-visible .animate-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Service Card Base Style */
+.service-card {
+    transition: all 0.5s ease;
+}
+
+/* Modal Animation */
+#projectModal {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Navbar Styles */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #60a5fa !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #3b82f6;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Mobile Menu */
+#mobileMenuBtn {
+    cursor: pointer;
+}
+
+/* Portfolio Card Hover Effect */
+.bg-slate-700:hover {
+    transform: translateY(-5px);
+}
+
+/* Button Hover Effects */
+button {
+    transition: all 0.3s ease;
+}
+
+/* Filter Button Active State */
+.filter-btn {
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    transform: scale(1.05);
+}
+
+/* Portfolio Slider */
+#portfolioSlider {
+    will-change: transform;
+}
+
+/* Dot Indicator */
+#dotsContainer button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#dotsContainer button:hover {
+    background-color: #60a5fa;
+}
+
+/* Image Hover Effect in Modal */
+#modalImages img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#modalImages img:hover {
+    transform: scale(1.05);
+}
+
+/* Testimonial Card Hover */
+#testimonials .bg-slate-800:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.3);
+}
+
+/* Contact Icon Animation */
+#contact .bg-blue-600 {
+    transition: all 0.3s ease;
+}
+
+#contact .flex:hover .bg-blue-600 {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Footer Links */
+footer a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    background-color: #3b82f6;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+footer a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section Stats Animation */
+#home .bg-slate-800 {
+    transition: all 0.3s ease;
+}
+
+#home .bg-slate-800:hover {
+    transform: scale(1.05);
+    border-color: #60a5fa;
+}
+
+/* Navigation Separator Styling */
+nav span {
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .animated-text {
+        font-size: 16px;
+    }
+    
+    .section-animate .animate-item {
+        transform: translateY(30px);
+    }
+}
+
+/* Additional Hover Effects */
+.hover\:scale-105:hover {
+    transform: scale(1.05) !important;
+}
+
+/* Shadow Effects */
+.hover\:shadow-2xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Backdrop Blur Support */
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+}
+
+/* Gradient Text Effect (Optional Enhancement) */
+.gradient-text {
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Card Glass Effect */
+.glass-effect {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Pulse Animation for Important Elements */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+    }
+}
+
+.pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
